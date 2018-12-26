@@ -7,10 +7,7 @@ body {
   line-height: 22px;
   color: #323232;
   min-width: 1200px;
-  background-color: #849d8f;
-}
-.color__wrapper {
-  background-color: #849d8f;
+  position: relative;
 }
 a {
     text-decoration: none;
@@ -179,7 +176,7 @@ input[type="radio"].visually-hidden {
 .user__link--search {
   padding:8px;
   border-radius: 50%;
-  background-color: #a1b4a9;
+  background-color: rgba(255,255,255,0.2);
 }
 .search__form {
   position: absolute;
@@ -234,7 +231,7 @@ input::placeholder {
   padding-right: 16px;
   padding-top:8px;
   padding-bottom:8px;
-  background-color: #a1b4a9;
+  background: rgba(255,255,255, 0.2);
   border-radius: 20px;
   position: relative;
 }
@@ -307,6 +304,8 @@ input::placeholder {
   padding:10px 25px;
   border-radius: 20px;
   cursor: pointer;
+  font-size:18px;
+  line-height:24px;
 }
 .user__link--enter:hover,
 .user__link--enter:focus,
@@ -422,13 +421,15 @@ width: 112px;
   border-radius: 20px;
   border:none;
   float:right;
+  font-size:18px;
+  line-height:24px;
 }
 .user__link--basket {
   padding-left:45px;
   padding-right: 34px;
   padding-top:8px;
   padding-bottom:8px;
-  background-color: #a1b4a9;
+  background-color: rgba(255,255,255,0.2);
   border-radius: 20px;
   position: relative;
 }
@@ -485,14 +486,34 @@ width: 112px;
   line-height:24px;
   padding-top:4px;
   display: block;
+/*Слайдер*/
+}
+.slider {
+  padding-top: 313px;
+  padding-bottom:55px;
+  position: relative;
+}
+#slide-1:checked ~ .color__wrapper {
+  background: url('../img/ice-1.png')  no-repeat top;
+  background-color: #849d8f;
+}
+#slide-2:checked ~ .color__wrapper {
+  background: url('../img/ice-2.png')  no-repeat top;
+  background-color: #8996a6;
+}
+#slide-3:checked ~ .color__wrapper {
+  background: url('../img/ice-3.png')  no-repeat top;
+  background-color: #9d8b84;
 }
 .best__offer {
+  display: none;
+  text-align: center;
   font-size:60px;
   line-height: 60.35px;
-  padding:0;
-  margin:0;
   color:#fff;
   width:700px;
+  padding:0;
+  margin:0 auto;
 }
 .slider__btn {
   font-size:32px;
@@ -500,6 +521,46 @@ width: 112px;
   color:#fff;
   font-weight: 500;
   background: linear-gradient(to top, #e74a35, #f26843);
+  padding:10px 40px;
+  border-radius: 30px;
+  position: relative;
+  display: inline-block;
+  margin-left:50%;
+  left:-140px;
+  margin-top:29px;
+}
+input#slide-1:checked ~ .color__wrapper .offer-1,
+input#slide-2:checked ~ .color__wrapper .offer-2,
+input#slide-3:checked ~ .color__wrapper .offer-3 {
+  display: block;
+}
+input#slide-1:checked ~ .color__wrapper label[for="slide-1"],
+input#slide-2:checked ~ .color__wrapper label[for="slide-2"],
+input#slide-3:checked ~ .color__wrapper label[for="slide-3"] {
+  background-color: #fff;
+}
+input#slide-1:not(:checked):hover ~ .color__wrapper label[for="slide-1"],
+input#slide-2:not(:checked):hover ~ .color__wrapper label[for="slide-2"],
+input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
+  background-color: rgba(255,255,255,0.2);
+}
+.slider__controls {
+  position: absolute;
+  z-index:100;
+  bottom:70px;
+}
+.slider__control {
+  display: inline-block;
+  width:18px;
+  height:18px;
+  background-color: transparent;
+  border:2px solid #fff;
+  border-radius: 50%;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.stock {
+  margin-top:50px;
 }
 .stock__title {
   font-size:35px;
@@ -715,8 +776,6 @@ width: 112px;
   box-shadow: inset 0 -2px 1px #ac1000;
   color:#fefefe;
   font-weight: bold;
-  font-size:18px;
-  line-height:24px;
 }
 .button:hover,
 .button:focus {
