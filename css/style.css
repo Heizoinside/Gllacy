@@ -109,7 +109,6 @@ input[type="radio"].visually-hidden {
   animation-name: sub__show;
   animation-duration: 0.3s;
   animation-timing-function: ease;
-
 }
 @keyframes sub__show {
   0% {
@@ -122,7 +121,6 @@ input[type="radio"].visually-hidden {
   }
   70% {
     transform: translateY(5px);
-
   }
   90% {
     transform: translateY(3px);
@@ -489,21 +487,26 @@ width: 112px;
 /*Слайдер*/
 }
 .slider {
-  padding-top: 313px;
-  padding-bottom:55px;
+  margin-top:213px;
+  padding-top: 100px;
+  padding-bottom:43px;
   position: relative;
 }
 #slide-1:checked ~ .color__wrapper {
   background: url('../img/ice-1.png')  no-repeat top;
   background-color: #849d8f;
+  transition: .8s ease;
 }
 #slide-2:checked ~ .color__wrapper {
   background: url('../img/ice-2.png')  no-repeat top;
   background-color: #8996a6;
+  transition: .8s ease;
 }
 #slide-3:checked ~ .color__wrapper {
   background: url('../img/ice-3.png')  no-repeat top;
   background-color: #9d8b84;
+  transition: .8s ease;
+
 }
 .best__offer {
   display: none;
@@ -547,7 +550,7 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
 .slider__controls {
   position: absolute;
   z-index:100;
-  bottom:70px;
+  bottom:59px;
 }
 .slider__control {
   display: inline-block;
@@ -560,7 +563,22 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   cursor: pointer;
 }
 .stock {
-  margin-top:50px;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top:0px;
+}
+.stock__block {
+  width:560px;
+  height:229px;
+  box-sizing: border-box;
+  border-radius: 14px;
+}
+.strawberry__block {
+  background: url('../img/Малиновый_фон.jpg') center no-repeat;
+}
+.chocolate__block {
+  background: url('../img/Шоколадный_фон.jpg') center no-repeat;
 }
 .stock__title {
   font-size:35px;
@@ -568,17 +586,32 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   color:#fff;
   margin:0;
   padding:0;
+  padding-top:15px;
+  padding-left: 19px;
+  word-wrap: break-word;
 }
 .stock__text {
   font-size:18px;
+  font-weight: 500;
   color:#fff;
   margin:0;
   padding:0;
+  padding-top:15px;
+  padding-left: 19px;
+  word-wrap: break-word;
 }
 .stock__link {
-  color:#fff;
   font-weight: bold;
-  background: linear-gradient(to top, #e74a35, #f26843);
+  font-size: 18px;
+  line-height: 24px;
+  padding-top:10px;
+  padding-bottom:13px;
+  padding-left:22px;
+  padding-right:22px;
+  border-radius: 25px;
+  float:right;
+  margin-top:45px;
+  margin-right: 22px;
 }
 .product__price {
   color:#fff;
@@ -726,16 +759,6 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   color:#fff;
 }
 /* Сетки */
-
-
-.stock {
-  display:flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.stock__block {
-  width:560px;
-}
 .product {
   display:flex;
   flex-wrap: wrap;
