@@ -624,12 +624,12 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top:40px;
-  padding-bottom:40px;
 }
 .product__unit {
   width:267px;
   text-align: center;
   position: relative;
+  padding-bottom:40px;
 }
 .main-unit::before {
   content: '';
@@ -669,7 +669,7 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
 }
 .product__price {
   position: absolute;
-  bottom:50px;
+  bottom:90px;
 }
 .product__price svg {
   position: relative;
@@ -732,24 +732,24 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   width:480px;
   position: relative;
 }
-.column-1,
-.column-3 {
+.tex__column-1,
+.tex__column-3 {
   padding-top:20px;
   padding-left:78px;
 }
-.column-1:first-child::before {
+.tex__column-1:first-child::before {
   content:"";
   position: absolute;
   width:50px;
   height:50px;
 }
-.column-2,
-.column-4 {
+.tex__column-2,
+.tex__column-4 {
   padding-top:20px;
   padding-left:84px;
 }
-.column-1::before,
-.column-3::before {
+.tex__column-1::before,
+.tex__column-3::before {
   content: "";
   width:50px;
   height:50px;
@@ -758,14 +758,14 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   left:20px;
   top:8px;
 }
-.column-1::before {
+.tex__column-1::before {
   background: url('../img/small_ice.svg') center no-repeat;
 }
-.column-3::before {
+.tex__column-3::before {
   background: url('../img/leaf.svg') center no-repeat;
 }
-.column-2::before,
-.column-4::before {
+.tex__column-2::before,
+.tex__column-4::before {
   content: "";
   width:50px;
   height:50px;
@@ -773,10 +773,10 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   left:27px;
   top:8px;
 }
-.column-2::before {
+.tex__column-2::before {
   background: url('../img/cow.svg') center no-repeat;
 }
-.column-4::before {
+.tex__column-4::before {
   background: url('../img/thermometer.svg') center no-repeat;
 }
 .about__title {
@@ -803,6 +803,7 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   background-image: url('../img/Клубничный_фон.jpg');
   background-position:-27px -224px ;
   padding-bottom:80px;
+  background-color: #fff;
 }
 .news__title {
   margin:0;
@@ -832,7 +833,8 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   width:285px;
 }
 .blog__subscribe {
-  background: url('../img/Почтовый-фон.png') repeat;
+  background: url('../img/Почтовый-фон.png') 2px;
+  background-color: #f8f7f4;
 }
 .blog__subscribe--layout {
   background-color: #f8f7f4;
@@ -1014,6 +1016,11 @@ iframe {
   color:#fff;
   padding: 0;
   margin:0;
+}
+.logo__link:hover path,
+.logo__link:focus path,
+.logo__link:active path {
+  fill:#ffbc9e;
 }
 .breadcumb {
   font-size:14px;
