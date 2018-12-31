@@ -16,7 +16,7 @@
         </a>
         <ul class="main__list">
           <li class="main__item catalog__item">
-            <a class="main__link" href="#">
+            <a class="main__link active" href="#">
               <span>Каталог</span>
             </a>
             <ul class="main__sub-list">
@@ -172,10 +172,12 @@
         <b>8 812 450-25-25</b>
       </p>
     </header>
-    <main class="container">
+    <main class="catalog__page container">
       <div class="breadcumbs">
         <a class="breadcumb" href="#">Главная</a>
+        <span>»</span>
         <a class="breadcumb" href="#">Каталог</a>
+        <span>»</span>
         <a class="breadcumb" href="#">Сливочное</a>
       </div>
       <h1 class="catalog-header">Сливочное мороженое</h1>
@@ -184,70 +186,80 @@
         <form action="https://echo.htmlacademy.ru" method="post" class="filters-form">
           <fieldset class="sorter-field">
             <legend>Сортировка:</legend>
-            <select class="sorter" name="sorter">
-              <option selected>По популярности</option>
-              <option>Сначала недорогие</option>
-              <option>Сначала дорогие</option>
-              <option>По жирности</option>
-            </select>
+            <label class="sorter-indicator">
+              <select name="sorter">
+                <option selected>По популярности</option>
+                <option>Сначала недорогие</option>
+                <option>Сначала дорогие</option>
+                <option>По жирности</option>
+              </select>
+            </label>
           </fieldset>
-          <fieldset class="range-field">
-            <legend>Цена:</legend>
-            <input type="text" name="min-price" value="100" disabled>
-            <input type="text" name="max-price" value="500" disabled>
-            <div class="range-controls">
+          <fieldset class="range__field">
+            <legend class="range__price">Цена: 100 руб. &ndash; 500 руб.</legend>
+            <div class="range__controls">
               <div class="scale">
                 <div class="bar"></div>
               </div>
-              <div class="toggle toggle-min"></div>
-              <div class="toggle toggle-max"></div>
+              <div class="toggle toggle-min" tabindex="0"></div>
+              <div class="toggle toggle-max" tabindex="0"></div>
             </div>
           </fieldset>
           <fieldset class="radio-field">
-            <legend>Жирность</legend>
+            <legend>Жирность:</legend>
+            <div class="radio-wrapper">
             <label class="interface-radio">
-              <input type="radio" name="fat" value="0%">
+              <input class="visually-hidden" type="radio" name="fat" value="0%">
               <span class="radio-indicator">0%</span>
             </label>
             <label class="interface-radio">
-              <input type="radio" name="fat" value="10%" checked>
+              <input class="visually-hidden" type="radio" name="fat" value="10%" checked>
               <span class="radio-indicator">до 10%</span>
             </label>
             <label class="interface-radio">
-              <input type="radio" name="fat" value="<30%">
+              <input class="visually-hidden" type="radio" name="fat" value="<30%">
               <span class="radio-indicator">до 30%</span>
             </label>
             <label class="interface-radio">
-              <input type="radio" name="fat" value=">30%">
+              <input class="visually-hidden" type="radio" name="fat" value=">30%">
               <span class="radio-indicator">выше 30%</span>
             </label>
+            </div>
           </fieldset>
           <fieldset class="checkbox-field">
+            <legend>Наполнители:</legend>
+            <div class="checkbox-wrapper">
             <label class="interface-checkbox">
-              <input type="checkbox" name="chocolate" id="chocolate">
-              <span class="checkbox-indicator">Шоколадные</span>
+              <input class="visually-hidden" type="checkbox" name="chocolate" id="chocolate" checked>
+              <span class="checkbox-indicator"></span>
+              Шоколадные
             </label>
             <label class="interface-checkbox">
-              <input type="checkbox" name="sugar" id="sugar">
-              <span class="checkbox-indicator">Сахарные присыпки</span>
+              <input class="visually-hidden" type="checkbox" name="sugar" id="sugar" checked>
+              <span class="checkbox-indicator"></span>
+              Сахарные присыпки
             </label>
             <label class="interface-checkbox">
-              <input type="checkbox" name="fruit" id="fruit">
-              <span class="checkbox-indicator">Фрукты</span>
+              <input class="visually-hidden" type="checkbox" name="fruit" id="fruit">
+              <span class="checkbox-indicator"></span>
+              Фрукты
             </label>
             <label class="interface-checkbox">
-              <input type="checkbox" name="syrup" id="syrup">
-              <span class="checkbox-indicator">Сиропы</span>
+              <input class="visually-hidden" type="checkbox" name="syrup" id="syrup">
+              <span class="checkbox-indicator"></span>
+              Сиропы
             </label>
             <label class="interface-checkbox">
-              <input type="checkbox" name="jam" id="jam">
-              <span class="checkbox-indicator">Джемы</span>
+              <input class="visually-hidden" type="checkbox" name="jam" id="jam">
+              <span class="checkbox-indicator"></span>
+              Джемы
             </label>
+            </div>
           </fieldset>
           <button class="filters-form__btn" type="submit">Применить</button>
         </form>
       </section>
-      <section class="product">
+      <section class="product product--catalog">
         <h2 class="visually-hidden">Каталог сливочного мороженого</h2>
         <article class="product__unit">
           <p class="product__price">
@@ -257,11 +269,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -272,11 +284,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/2.jpg" alt="Сливочно-кофейное с кусочками шоколада">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочно-кофейное с кусочками шоколада</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -287,11 +299,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочно-клубничное с присыпкой из белого шоколада</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -302,11 +314,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/4.jpg" alt="Сливочное крем-брюле с карамельной подливкой">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное крем-брюле с карамельной подливкой</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -317,11 +329,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/5.jpg" alt="Сливочное с брусничным джемом">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное с брусничным джемом</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -332,11 +344,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/6.jpg" alt="Сливочно-черничное с цельными ягодами черники">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочно-черничное с цельными ягодами черники</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -347,11 +359,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/7.jpg" alt="Сливочно-лимонное с карамельной присыпкой">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочно-лимонное с карамельной присыпкой</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -362,11 +374,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/8.jpg" alt="Сливочное с шоколадной стружкой">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное с шоколадной стружкой</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -377,11 +389,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/9.jpg" alt="Сливочное с шоколадной стружкой">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное с шоколадной стружкой</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -392,11 +404,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/10.jpg" alt="Сливочноe с ментоловым сиропом">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочноe с ментоловым сиропом</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -407,11 +419,11 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/11.jpg" alt="Сливочное с кусочками черного шоколада">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное с кусочками черного шоколада</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
         <article class="product__unit">
@@ -422,21 +434,22 @@
             <span class="product__weight"> /кг</span>
           </p>
           <img class="ice" src="img/12.jpg" alt="Сливочное с мятным сиропом">
-          <a href="">
+          <a class="product__title--link" href="#">
             <h3 class="product__title">Сливочное с мятным сиропом</h3>
           </a>
           <div class="product__picture--wrapper">
-            <a class="product__link" href="">Быстрый просмотр</a>
+            <a class="button product__link" href="#">Быстрый просмотр</a>
           </div>
         </article>
       </section>
-      <div class="page-navigation">
-        <a href="#" class="page-number active">1</a>
+      <div class="paginator">
+        <a href="#" class="prev-arrow arrow-disabled"></a>
+        <a href="#" class="page-number current">1</a>
         <a href="#" class="page-number">2</a>
         <a href="#" class="page-number">3</a>
         <a href="#" class="page-number">4</a>
         <a href="#" class="page-number">5</a>
-        <a href="#" class="page-number number-next">></a>
+        <a href="#" class="next-arrow"></a>
       </div>
     </main>
     <footer class="main-footer container">

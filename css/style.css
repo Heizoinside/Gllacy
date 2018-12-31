@@ -153,8 +153,11 @@ input[type="radio"].visually-hidden {
 }
 .main__link.active {
   background-color: #d07058;
-/*Пользовательское меню*/
 }
+.main__link.active span {
+  box-shadow: none;
+}
+/*Пользовательское меню*/
 .user__list {
   padding-top: 19px;
   display: flex;
@@ -246,6 +249,7 @@ input::placeholder {
   top:35px;
   right:0;
   display: none;
+  z-index: 99;
 }
 .entrance__item:hover > .entrance__form,
 .entrance__item:focus > .entrance__form {
@@ -470,7 +474,6 @@ width: 112px;
   position: absolute;
   left:16px;
   top:7px;
-/*Конец пользовательского меню*/
 }
 .header__contacts {
   color:#fff;
@@ -480,7 +483,7 @@ width: 112px;
   margin-top:-5px;
   font-size: 14px;
   line-height: 16px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .header__contacts b {
   font-size:22px;
@@ -629,7 +632,7 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   width:267px;
   text-align: center;
   position: relative;
-  padding-bottom:40px;
+  margin-bottom:40px;
 }
 .main-unit::before {
   content: '';
@@ -669,7 +672,7 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
 }
 .product__price {
   position: absolute;
-  bottom:90px;
+  bottom:48px;
 }
 .product__price svg {
   position: relative;
@@ -884,6 +887,7 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
   padding-bottom:11px;
   border-radius: 20px;
 }
+/*Контакты и карта*/
 .find {
   margin-top:38px;
 }
@@ -930,13 +934,14 @@ iframe {
   display:inline-block;
   border-radius: 30px;
   margin-top:6px;
-
 }
+/*Футер*/
 .main-footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   min-height: 103px;
+  padding-bottom:5px;
 }
 .social {
   width:186px;
@@ -944,7 +949,7 @@ iframe {
   display: flex;
   justify-content: space-between;
   margin-right: auto;
-  padding-top:30px;
+  padding-top:35px;
 }
 .social__link {
   display: inline-block;
@@ -971,7 +976,7 @@ iframe {
   width:330px;
   margin-right: auto;
   margin-left:35px;
-  padding-top:26px;
+  padding-top:31px;
   height: 45px;
 }
 .footer-menu__active {
@@ -1008,7 +1013,7 @@ iframe {
   background: url('../img/heart-purple.svg') no-repeat center;
 }
 .copyright {
-  padding-top: 14px;
+  padding-top: 20px;
 }
 .copyright__text {
   font-size:12px;
@@ -1022,6 +1027,16 @@ iframe {
 .logo__link:active path {
   fill:#ffbc9e;
 }
+/*Хлебные крошки*/
+.breadcumbs {
+  margin-top:20px;
+}
+.breadcumbs span {
+  color:#e7ebe9;
+  display: inline-block;
+  padding-left: 2px;
+  padding-right: 2px;
+}
 .breadcumb {
   font-size:14px;
   line-height: 16px;
@@ -1033,19 +1048,59 @@ iframe {
   font-size:35px;
   line-height: 41px;
   color:#fff;
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: 0.5px;
 }
-.filters-form fieldset {
+/*--------------------ФОРМА---------------------------*/
+/*Формы сортировки*/
+.filters {
+  margin-top: 25px;
+}
+.filters-form {
+  display:flex;
+  flex-wrap: wrap;
+  width:860px;
+}
+.sorter-field {
   border:none;
   padding:0;
   margin:0;
 }
-.filters-form legend {
-  font-size:14px;
-  line-height: 16px;
-  font-weight: bold;
+.sorter-field legend {
+  padding-left: 14px;
+  padding-bottom:7px;
+}
+.sorter-indicator {
+  height: 36px;
+  position: relative;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  z-index: 2;
+  background-image:url('../img/select-arrow.svg');
+  background-repeat: no-repeat;
+  background-position:169px 16px;
+}
+.sorter-indicator select {
+  font-size:16px;
+  line-height: 18px;
+  font-family: inherit;
   color:#fff;
-  padding:0;
-  margin:0;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  padding-left: 13px;
+  padding-right: 31px;
+  padding-top:8px;
+  padding-bottom:8px;
+  border:none;
+  border-radius:20px;
+  text-transform: lowercase;
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
 }
 .sorter {
   font-size:16px;
@@ -1053,12 +1108,225 @@ iframe {
   color:#fff;
   background-color: #a9b9af;
 }
-.range-field input {
+.sorter-indicator:hover select,
+.sorter-indicator:focus select {
+  cursor: pointer;
+  color: #323232;
+}
+.sorter-indicator:hover,
+.sorter-indicator:focus {
+  background-image:url('../img/select-black-arrow.svg');
+  background-repeat: no-repeat;
+  background-position:169px 16px;
+}
+/*Шкала диапазона*/
+.range__field {
+  margin:0;
+  padding:0;
+  margin-left: 15px;
+  width:218px;
+}
+.range__price {
+  margin:0;
+  padding:0;
+  padding-bottom: 7px;
+  padding-left:12px;
+}
+.range__controls {
+  width:218px;
+  height:36px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  position: relative;
+}
+.scale {
+  position: absolute;
+  width:176px;
+  height:4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  top:17px;
+  left:21px;
+}
+.bar {
+  width:98px;
+  height:4px;
+  background-color: rgba(255, 255, 255, 0.9);
+  top:0;
+  left:20px;
+  position: absolute;
+}
+.toggle {
+  position: absolute;
+  width:4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color:#ababab;
+  border:8px solid #fff;
+  top:9px;
+  cursor: pointer;
+}
+.toggle-min {
+  left:35px;
+}
+.toggle-max {
+  right:65px;
+}
+/*Радио-формы*/
+.radio-field {
+  margin:0;
+  padding:0;
+  margin-left: 15px;
+}
+.radio-field legend {
+  margin:0;
+  padding:0;
+  padding-left:15px;
+  padding-bottom: 7px;
+}
+.radio-wrapper {
+  width:415px;
+  padding-bottom:10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding-left: 4px;
+}
+.interface-radio {
+  vertical-align: middle;
+  display:inline-block;
+  padding-top:10px;
+  cursor:pointer;
+}
+.radio-indicator {
+  position: relative;
+  vertical-align: bottom;
+  padding-left:42px;
+}
+.radio-indicator::before {
+  content: "";
+  position: absolute;
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  border:4px solid #e6ebe9;
+  top:-2.5px;
+  left:10px;
+}
+.interface-radio input:checked ~ .radio-indicator::after {
+  content: "";
+  position: absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background-color: #e6ebe9;
+  top:5px;
+  left:17.4px;
+}
+.interface-radio input:checked:hover ~ .radio-indicator::after,
+.interface-radio input:checked:focus ~ .radio-indicator::after {
+  background-color: #fff;
+}
+.interface-radio input:checked:disabled ~ .radio-indicator::after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.radio-indicator:hover::before,
+.radio-indicator:focus::before {
+  border-color:#fff;
+}
+.interface-radio input:disabled ~ .radio-indicator::before {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+/*Чекбокс-формы*/
+.checkbox-field {
+  margin:0;
+  padding:0;
+  margin-top:12px;
+}
+.checkbox-field legend {
+  padding-top:2px;
+  padding-left:15px;
+  padding-bottom:7px;
+}
+.checkbox-wrapper {
+  margin:0;
+  width:702px;
+  padding-top:8px;
+  padding-bottom:9px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  padding-left:16px;
+  padding-right:19px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.interface-checkbox {
+  display:inline-block;
+  cursor:pointer;
+  text-transform: lowercase;
+  position: relative;
+  padding-left:32px;
+}
+.interface-checkbox:nth-child(3n) {
+  margin-left: -6px;
+}
+.checkbox-indicator  {
+    display:inline-block;
+    position: absolute;
+    width:17px;
+    height: 17px;
+    border:2px solid #e6ebe9;
+    left:0;
+    top:0;
+    border-radius: 2px;
+}
+.checkbox-indicator:hover,
+.checkbox-indicator:focus {
+  border:2px solid #fff;
+}
+.interface-checkbox input:disabled ~ .checkbox-indicator {
+  border:2px solid rgba(255, 255, 255, 0.2);
+}
+.interface-checkbox input:checked ~ .checkbox-indicator::before {
+  content:"";
+  position: absolute;
+  background-color: #e6ebe9;
+  width:18px;
+  height:3px;
+  transform: rotate(-45deg);
+  bottom:9px;
+  left:4px;
+}
+.interface-checkbox input:checked ~ .checkbox-indicator::after {
+  content:"";
+  position: absolute;
+  background-color: #e6ebe9;
+  width:7px;
+  height:3px;
+  transform: rotate(45deg);
+  bottom:7px;
+  left:1px;
+}
+.interface-checkbox:hover input:checked ~ .checkbox-indicator::before,
+.interface-checkbox:hover input:checked ~ .checkbox-indicator::after,
+.interface-checkbox:focus input:checked ~ .checkbox-indicator::before,
+.interface-checkbox:focus input:checked ~ .checkbox-indicator::after {
+  background-color: #fff;
+}
+.interface-checkbox input:disabled:checked ~ .checkbox-indicator::before,
+.interface-checkbox input:disabled:checked ~ .checkbox-indicator::after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.filters-form fieldset {
+  border:none;
+}
+.filters-form legend,
+.filters-form b {
   font-size:14px;
   line-height: 16px;
   font-weight: bold;
   color:#fff;
-  background:inherit;
 }
 .radio-field,
 .checkbox-field {
@@ -1071,13 +1339,96 @@ iframe {
   font-size:16px;
   line-height: 18px;
   color:#fff;
-  font-weight: bold;
-  background-color: #a6b7ad;
+  font-weight: 500;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 30px;
+  margin-top:36px;
+  margin-left:15px;
+  padding:0 29px;
+  padding-top:6px;
+  padding-bottom:9px;
+  border:2px solid #fff;
+  cursor: pointer;
 }
-.page-navigation a {
+.filters-form__btn:hover,
+.filters-form__btn:focus {
+  background-color: rgba(255,255,255,0.9);
+  color:#353535;
+}
+.filters-form__btn:active {
+  background-color: #eaeaea;
+  box-shadow:   0 -2px 2px #6a6b6a;
+}
+/*--------------------КОНЕЦ ФОРМЫ---------------------------*/
+/*Каталог*/
+.product--catalog {
+  margin-bottom:38px;
+}
+/*Навигация по странице*/
+.paginator {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  width: 167px;
+  margin-left: auto;
+  margin-bottom: 28px;
+  padding-left:22px;
+}
+.prev-arrow::before {
+  content:"";
+  width:6px;
+  height:6px;
+  border-top:2px solid rgba(255,255,255, 0.2);
+  border-left:2px solid rgba(255,255,255, 0.2);
+  position: absolute;
+  left:0;
+  top:10px;
+  transform: rotate(-45deg);
+}
+.next-arrow::before {
+  content:"";
+  width:6px;
+  height:6px;
+  border-top:2px solid rgba(255,255,255, 0.9);
+  border-right:2px solid rgba(255,255,255, 0.9);
+  position: absolute;
+  right:2px;
+  top:10px;
+  transform: rotate(45deg);
+}
+.page-number {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  box-sizing: border-box;
+  padding-top: 4px;
+  margin-right:2px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13em;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 50%;
+}
+.page-number.current {
+  background-color: #ffffff;
+  color:#000;
+}
+.page-number:not(.current):hover,
+.page-number:not(.current):focus  {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.page-number:not(.current):active {
+  background-color: #ffffff;
+  color:#000;
+}
+.paginator a {
   font-size:16px;
   line-height: 18px;
   color:#fff;
+}
+.catalog__page {
+ border-bottom:1px solid rgba(255, 255, 255, 0.2);
 }
 /*Кнопки*/
 .button {
