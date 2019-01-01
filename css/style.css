@@ -633,7 +633,6 @@ width: 112px;
   line-height: 44px;
   color:#fff;
   font-weight: 500;
-  background: -webkit-gradient(linear, left bottom, left top, from(#e74a35), to(#f26843));
   background: -webkit-linear-gradient(bottom, #e74a35, #f26843);
   background: -o-linear-gradient(bottom, #e74a35, #f26843);
   background: linear-gradient(to top, #e74a35, #f26843);
@@ -778,7 +777,6 @@ input#slide-3:not(:checked):hover ~ .color__wrapper label[for="slide-3"] {
 .product__link {
   font-size:18px;
   color:#fff;
-  background: -webkit-gradient(linear, left bottom, left top, from(#e74a35), to(#f26843));
   background: -webkit-linear-gradient(bottom, #e74a35, #f26843);
   background: -o-linear-gradient(bottom, #e74a35, #f26843);
   background: linear-gradient(to top, #e74a35, #f26843);
@@ -1611,7 +1609,6 @@ iframe {
 }
 /*Кнопки*/
 .button {
-  background: -webkit-gradient(linear, left bottom, left top, from(#e74a35), to(#f26843));
   background: -webkit-linear-gradient(bottom, #e74a35, #f26843);
   background: -o-linear-gradient(bottom, #e74a35, #f26843);
   background: linear-gradient(to top, #e74a35, #f26843);
@@ -1622,13 +1619,11 @@ iframe {
 }
 .button:hover,
 .button:focus {
-  background: -webkit-gradient(linear, left bottom, left top, from(#ec6f5e), to(#f48569));
   background: -webkit-linear-gradient(bottom, #ec6f5e, #f48569);
   background: -o-linear-gradient(bottom, #ec6f5e, #f48569);
   background: linear-gradient(to top, #ec6f5e, #f48569);
 }
 .button:active {
-  background: -webkit-gradient(linear, left bottom, left top, from(#e0603e), to(#d84732));
   background: -webkit-linear-gradient(bottom, #e0603e, #d84732);
   background: -o-linear-gradient(bottom, #e0603e, #d84732);
   background: linear-gradient(to top, #e0603e, #d84732);
@@ -1677,6 +1672,23 @@ iframe {
   border-radius: 3px;
   margin-top: 20px;
   font-family: inherit;
+}
+.popup-name:hover,
+.popup-email:hover,
+.popup__form textarea:hover {
+  border:1px solid #c7c6c5;
+  -webkit-box-shadow: 0 0 0 1px #c7c6c5;
+          box-shadow: 0 0 0 1px #c7c6c5;
+}
+.popup-name:focus,
+.popup-email:focus,
+.popup-name:active,
+.popup-email:active,
+.popup__form textarea:focus,
+.popup__form textarea:active {
+  border:1px solid #8fbdec;
+  -webkit-box-shadow: 0 0 0 1px #8fbdec;
+          box-shadow: 0 0 0 1px #8fbdec;
 }
 .popup input:not(:placeholder-shown):invalid {
   border-color: #e74246;
