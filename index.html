@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <title>Магазин мороженого Gllacy</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic-ext" rel="stylesheet">
-  <link rel="stylesheet" href="css/style-min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <div class="popup-shadow"></div>
   <input class="slider-input visually-hidden" type="radio" id="slide-1" name="slider" checked>
   <input class="slider-input visually-hidden" type="radio" id="slide-2" name="slider">
   <input class="slider-input visually-hidden" type="radio" id="slide-3" name="slider">
@@ -399,21 +400,20 @@
       </div>
     </footer>
   </div>
-  <div class="popup-shadow"></div>
-    <div class="popup-wrapper container">
-      <div class="popup">
-        <form action="https://echo.htmlacademy.ru" method="post" class="popup__form">
-          <fieldset>
-            <legend>Мы обязательно вам ответим!</legend>
-            <input class="popup-name" type="text" name="name" id="name" placeholder="Как вас зовут?">
-            <input class="popup-email" type="email" name="e-mail" id="e-mail" placeholder="Ваша почта для ответа?">
-            <textarea name="text" id="text" cols="65" rows="10" placeholder="Напишите что-нибудь..."></textarea>
-            <button type="submit" class="button popup--submit">Отправить</button>
-            <button class="popup__close"></button>
-          </fieldset>
-        </form>
-      </div>
+  <div class="popup-wrapper container">
+    <div class="popup">
+      <form action="https://echo.htmlacademy.ru" method="post" class="popup__form">
+        <fieldset>
+          <legend>Мы обязательно вам ответим!</legend>
+          <input class="popup-name" type="text" name="name" id="name" placeholder="Как вас зовут?">
+          <input class="popup-email" type="email" name="e-mail" id="e-mail" placeholder="Ваша почта для ответа?">
+          <textarea name="text" id="text" cols="65" rows="10" placeholder="Напишите что-нибудь..."></textarea>
+          <button type="submit" class="button popup--submit">Отправить</button>
+          <button class="popup__close"></button>
+        </fieldset>
+      </form>
     </div>
+  </div>
   <script>
     var popup = document.querySelector(".popup");
     var popupLink = document.querySelector(".contacts__btn");
@@ -435,9 +435,11 @@
         evt.preventDefault();
         if (popup.classList.contains("popup-show")) {
           popup.classList.remove("popup-show");
-          wrapper.classList.remove("popup-show-wrapper");        }
+          wrapper.classList.remove("popup-show-wrapper");
+        }
       }
     });
   </script>
 </body>
+
 </html>
